@@ -4,7 +4,7 @@
 
 # MPEG-DASH SERVER
 
-A Node.js server to generate and server MPEG-DASH contents using [Express 4](http://expressjs.com/) and [MongoDB](https://www.mongodb.com/) using [Mongoose ODM](https://mongoosejs.com/).
+A Node.js server to generate and serve MPEG-DASH contents using [Express 4](http://expressjs.com/) and [MongoDB](https://www.mongodb.com/) using [Mongoose ODM](https://mongoosejs.com/).
 
 ## Running Locally
 
