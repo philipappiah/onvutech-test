@@ -32,7 +32,7 @@ class MediaController {
             message:'You files is being transcoded to MPEG-DASH format'
          })
          res.on('finish', async () => {
-            await prepareMediaFiles(this.command, console.log)// run the transcoding task upload in the background
+            await prepareMediaFiles(this.command, console.log)// run the transcoding task in the background
         })
     
 
@@ -45,7 +45,7 @@ class MediaController {
             message:'You files are being uploaded'
          })
          res.on('finish', async () => {
-            await uploadToS3(this.outputPath) // run the s3 upload in the background
+            await uploadToS3(this.outputPath) // run the s3 upload task in the background
         })
     
 
