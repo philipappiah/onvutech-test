@@ -65,7 +65,7 @@ function uploadPromise(dirName:string,filePath:string){
             reject(err)
           }
          
-          //let's persist the created mpd files to a database
+          
          
           
           console.log(`uploaded ${params.Key} to ${params.Bucket}`);
@@ -86,6 +86,8 @@ export async function uploadToS3(dirName:string){
   .then(async (results)=>{
 
     const bucketName = process.env.AWS_S3_BUCKET_NAME || 'onvumediauploads'
+
+    //let's persist the created mpd file to a database
     await MediaModel.create({
       title:`${bucketName}/mainfest.mpd`,
       description:'media description here'
