@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
 import { CatchExpressError } from '../utils/errorHandlers';
 import { ResponseHandlers } from '../utils/responseHandler';
-import { prepareMediaFiles, uploadToS3} from '../scripts/cmd';
+import { prepareMediaFiles, uploadToS3 } from '../scripts/cmd';
 import { MediaModel } from '../models/media.model';
 
 const fs = require('fs')
@@ -26,28 +26,28 @@ class MediaController {
 
 
     transcodeMedia = CatchExpressError(async (req: Request, res: Response, next: NextFunction) => {
-        
-     
+
+
         res.status(200).send({
-            message:'You files is being transcoded to MPEG-DASH format'
-         })
-         res.on('finish', async () => {
+            message: 'You files is being transcoded to MPEG-DASH format'
+        })
+        res.on('finish', async () => {
             await prepareMediaFiles(this.command, console.log)// run the transcoding task in the background
         })
-    
+
 
     })
 
 
-    createMedia =  CatchExpressError(async (req: Request, res: Response, next: NextFunction) => {
-  
+    createMedia = CatchExpressError(async (req: Request, res: Response, next: NextFunction) => {
+
         res.status(200).send({
-            message:'You files are being uploaded'
-         })
-         res.on('finish', async () => {
+            message: 'You files are being uploaded'
+        })
+        res.on('finish', async () => {
             await uploadToS3(this.outputPath) // run the s3 upload task in the background
         })
-    
+
 
     })
 

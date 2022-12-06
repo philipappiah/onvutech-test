@@ -52,7 +52,7 @@ describe('Media MPD Files', () => {
 
 
 
-    // /test POST mediaFiles with validation error 
+    // /test POST mediaFiles
     describe('/POST mediaFile', () => {
         it('it should store generated dash media content to s3 storage', (done) => {
 
@@ -62,7 +62,6 @@ describe('Media MPD Files', () => {
                     .end((err: any, res: any) => {
                         res.should.have.status(200);
                         res.body.should.be.a('array');
-                        console.log(res.body)
                         res.body.length.should.be.gt(0);
                         done();
                     });
