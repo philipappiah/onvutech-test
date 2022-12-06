@@ -39,5 +39,9 @@ You can view the api docs via the endpoint http://localhost:4000/api-docs
 npm run test
 ```
 
+
 ## Sample test endpoint:
 http://onvumediauploads.s3.eu-west-2.amazonaws.com/manifest.mpd
+
+## ffmpeg download
+https://ffmpeg.org/download.html
