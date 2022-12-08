@@ -29,7 +29,7 @@ class MediaController {
 
 
         res.status(200).send({
-            message: 'You files is being transcoded to MPEG-DASH format'
+            message: 'You file is being transcoded to MPEG-DASH format'
         })
         res.on('finish', async () => {
             await prepareMediaFiles(this.command, console.log)// run the transcoding task in the background

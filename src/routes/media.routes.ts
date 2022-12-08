@@ -7,7 +7,7 @@ const mediaController = new MediaController()
 
 
 router.post('/', mediaController.createMedia)
-router.get('/transcode', mediaController.transcodeMedia)
+router.post('/transcode', mediaController.transcodeMedia)
 router.get('/:id',mediaController.getMedia )
 router.get('/',mediaController.listMedia )
 
